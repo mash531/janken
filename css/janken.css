@@ -1,0 +1,62 @@
+body{
+    background-image: url(../img/JANKEN.png);
+    background-size: 500px;
+}
+/* h1{
+    background-color: dodgerblue;
+    font-size: 300px;
+    color: white;
+} */
+
+main li {
+   
+        list-style: none;
+        text-align: center;
+        font-size: 150px;
+        margin: 20%;
+    }
+    p:hover{
+         background-color: darkorange;
+    }
+
+
+
+    p{
+        text-align: center;
+        font-size: 50px;
+        background-color:white;
+    }
+    h2{
+        font-size: 50px;
+        background-color: chartreuse;
+    }
+   
+    h3{
+        background-color: aqua;
+        font-size: 50px;
+    }
+    /*アニメーションつけたかった
+    /* header{
+     animation: slidein 3s linear 1s  infinite running;
+    } */
+    /* .wall{
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+        position: fixed;
+        right: 0;
+        top: 0;
+        
+    }
+    .wall iframe{
+       box-sizing: border-box;
+       height: auto;
+       left: 50%;
+       min-height: 100%; 
+       min-width: 100%;
+       position: absolute;
+       top: 50%;
+       transform: translate(-50%,-50%);
+       width: auto;
+       z-index: -1;
+    } */

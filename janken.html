@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/janken.css" />
+    <title>JANKEN</title>
+
+</head>
+
+
+<body>
+
+    <!-- <header>
+        <h1>JANKEN</h1>
+    </header> -->
+
+    <main>
+        <ul>
+            <li id="start" onclick.this>START</li>
+        </ul>
+
+        <!----勝ち、負け、あいこの回数をそれぞれ表示したい>
+        <p id='miu'> 勝ち</p>
+        <p id="aya">あいこ</p>
+        <p id="snack">負け</p>
+        <p id="star">勝率：</p> -->
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        //スタートを押すとグー、チョキ、パーの選択肢を1度のみ表示
+        $(function () {
+            $("#start").on("click", function (e) {
+                $("#start").append('<p id="key">グー</p>');
+                $("#start").append('<p id="tea">チョキ</p>');
+                $("#start").append('<p id="book">パー</p>');
+                $('#start').append('<h2 id="echo">コンピューターの出した手は？</h2>');
+                $('#start').append('<h3 id="js">結果は？</h3>');
+                $(this).off(e);
+
+            });
+        });
+        //グー、チョキ、パーそれぞれの選択肢のボタンを押すとコンピュータの出した手を表示
+        $(function () {
+            $(document).on("click", '#key', function (e) {
+                var gu = 0;
+                var comp = Math.floor(Math.random() * 3);
+                if (comp == 0) {
+                    $("#echo").text("コンピュータ：グー");
+                    $("#js").text("あいこ");
+                } else if (comp == 1) {
+                    $("#echo").text("コンピュータ：チョキ");
+                    $("#js").text("あなたの勝ち");
+                } else if (comp == 2) {
+                    $("#echo").text("コンピュータ：パー");
+                    $("#js").text("あなたの負け");
+                } //$(this).off(e);
+            });
+        });
+        $(function () {
+            $(document).on("click", "#tea", function (e) {
+                var choki = 1;
+                var comp = Math.floor(Math.random() * 3);
+                if (comp == 0) {
+                    $("#echo").text("コンピュータ：グー");
+                    $("#js").text("あなたの負け");
+                } else if (comp == 1) {
+                    $("#echo").text("コンピュータ：チョキ");
+                    $("#js").text("あいこ");
+                } else if (comp == 2) {
+                    $("#echo").text("コンピュータ：パー");
+                    $("#js").text("あなたの勝ち");
+                } //$(this).off(e);
+            });
+        });
+        $(function () {
+            $(document).on("click", "#book", function (e) {
+                var pa = 2;
+                var comp = Math.floor(Math.random() * 3);
+                if (comp == 0) {
+                    $("#echo").text("コンピュータ：グー");
+                    $("#js").text("あなたの勝ち");
+                } else if (comp == 1) {
+                    $("#echo").text("コンピュータ：チョキ");
+                    $("#js").text("あなたの負け");
+                } else if (comp == 2) {
+                    $("#echo").text("コンピュータ：パー");
+                    $("#js").text("あいこ");
+                }// $(this).off(e);
+            });
+        });
+        //勝ち、負け、あいこの回数をそれぞれ表示したい
+        // $(function () {
+        //     $(document).on('click', '#miu', function () {
+        //         var targetStr = '勝ち'
+        //         var count = (text.match(new RegExp(targetStr)) || []).length;
+        //     });
+        // });
+
+        // result = $('.miu').text();
+        // result = $('.aya').text();
+        // result = $('.snack').text();
+        // result1 = parseInt($('.miu').text());
+        // result1++;
+        // $('.miu').text(result1)
+        // result2 = parseInt($('.aya').text());
+        // result2++;
+        // $('.aya').text(result2)
+        // result3 = parseInt($('.snack').text());
+        // result3++;
+        // $('.snack').text(result3)
+
+        一度どれかを押すと他のボタンを非表示にする
+        $(function () {
+            $(document).one("click", "#key", function () {
+                $("#tea").hide();
+                $("#book").hide();
+            });
+        });
+        $(function () {
+            $(document).one("click", "#tea", function () {
+                $("#key").hide();
+                $("#book").hide();
+            })
+        });
+        $(function () {
+            $(document).one("click", "#book", function () {
+                $("#key").hide();
+                $("#tea").hide();
+            });
+        });
+
+    </script>
+
+
+
+
+
+
+</body>
